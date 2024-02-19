@@ -1,6 +1,31 @@
 {{ title }}
-<app-super-components/>
-<app-zippy/>
+<app-super-components />
+
 <p>
-  Wohohohoho put the SaSS on the floor !
+    Zippy 1
 </p>
+
+<app-zippy titleZippy="Une nouvelle valeur">
+    <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error odit omnis ducimus libero dolor? Fuga aperiam itaque adipisci. Molestiae repudiandae non praesentium nobis alias dicta. Ea facere qui delectus voluptates.
+    </section>
+    <ng-container class="footer">
+        Footer
+    </ng-container>
+</app-zippy>
+<app-zippy [titleZippy]="title" [isHidden]="true">
+</app-zippy>
+<p>
+    banana 1
+</p>
+<app-banana-in-abox/>
+<p>
+    Turc Alert
+</p>
+<app-truc (trucEmitter)="alertTruc($event)"></app-truc>
+<p>
+    Turc Console
+</p>
+<app-truc (trucEmitter)="consoleTruc($event)"></app-truc>
+
+<app-machin></app-machin>

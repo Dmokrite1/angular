@@ -1,13 +1,13 @@
-<div class="mask">
-<h1>
-    {{ name }} works!
-</h1>
-
-<button type="button" (click)="toggleHidden()">
-    {{ isHidden ? 'Afficher' : 'Cacher' }}
-</button>
-
-<p [hidden]="isHidden">
-    Si je regarde par là on me vois et si je regarde par là on ne me vois plus !!
-</p>
-</div>
+<section>
+  <div>
+      <span> {{ titleZippy }} </span>
+      <button (click)="toggleContentVisibility()"> {{ buttonText }}</button>
+  </div>
+  <p [hidden]="isHidden">
+      <ng-content></ng-content>
+  </p>
+  <footer>
+      <ng-content select=".footer">
+      </ng-content>
+  </footer>
+</section>

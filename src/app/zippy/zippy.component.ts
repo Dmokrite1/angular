@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-zippy',
@@ -8,9 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './zippy.component.css'
 })
 export class ZippyComponent {
-name = 'Zippy';
-isHidden = false;
 
-toggleHidden() {
+@Input() titleZippy = "Et Régis-Robert c'est mon prénom !";
+@Input() isHidden = false;
+
+get buttonText() {
+  if (this.isHidden) {
+    return 'Afficher';
+  }
+  return 'Cacher';
+}
+
+toggleContentVisibility() {
   this.isHidden = !this.isHidden;
 }}
