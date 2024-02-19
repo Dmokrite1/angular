@@ -1,0 +1,13 @@
+<div class="mask">
+<h1>
+    {{ name }} works!
+</h1>
+
+<button type="button" (click)="toggleHidden()">
+    {{ isHidden ? 'Afficher' : 'Cacher' }}
+</button>
+
+<p [hidden]="isHidden">
+    Si je regarde par là on me vois et si je regarde par là on ne me vois plus !!
+</p>
+</div>

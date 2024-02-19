@@ -1,0 +1,14 @@
+p {
+    background-color: aquamarine;
+    color: rgb(244, 211, 104);
+}
+
+.purple {
+    background-color: purple;
+    color: white;
+}
+
+.aqua {
+    background-color: aquamarine;
+    color: purple;
+}

@@ -1,0 +1,14 @@
+<p>
+    {{ name }} works!
+</p>
+
+<p [hidden]="isHidden">
+    <!--property bindings-->
+    Je pense que je suis caché
+</p>
+
+<!--class bindings; Toggle la présence de la class sur le button selon la property disabled-->
+<button type="submit" [class.disabled]="isDisabled" [disabled]="isDisabled">Button</button>
+
+<!--Event change color-->
+<button type="button" [class.purple]="isPurple" [class.aqua]="!isPurple" (click)="toggleIsPurple()">ChangeColor</button>
