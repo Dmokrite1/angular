@@ -18,4 +18,3 @@ toggleIsPurple() {
   this.isPurple = !this.isPurple;
 }
 }
-
