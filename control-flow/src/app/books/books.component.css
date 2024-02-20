@@ -1,0 +1,64 @@
+.books {
+    color: rgb(187, 37, 72);
+    width: fit-content;
+}
+
+.btnDelete {
+    background-color: aquamarine;
+    color: brown;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.randomBook {
+    background-color: brown;
+    color: aquamarine;
+    width: fit-content;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.btnRandom {
+    background-color: aquamarine;
+    color: brown;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btnList {
+    background-color: brown;
+    color: aquamarine;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.title {
+    border: 2px solid gold;
+    background-color: aquamarine;
+}
+
+.author {
+    border: 2px solid gold;
+    background-color: aquamarine;
+}
+
+.release {
+    border: 2px solid gold;
+    background-color: aquamarine;
+}
+
+.genre {
+    border: 2px solid gold;
+    background-color: aquamarine;
+}
+
+.langue {
+    border: 2px solid gold;
+    background-color: aquamarine;
+}
+
+.ulList{
+    list-style: none;
+    padding: 5px;
+}

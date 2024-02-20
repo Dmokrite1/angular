@@ -1,10 +1,10 @@
-<button (click)="displayRandomBook()">Affiche un livre random</button>
-<p>{{ randomBooks }}</p>
+<button (click)="displayList()" class="btnList">Afficher la liste</button>
 
-<button (click)="displayList()">Afficher la liste</button>
+<button (click)="displayRandomBook()" class="btnRandom">Affiche un livre random</button>
+<p class="randomBook">{{ randomBooks }}</p>
 
-<div [style.display]="listVisible ? 'block' : 'none'">
-  <ul>
+<div *ngIf="listVisible" class="books">
+  <ul class="ulList">
     @for (book of books; track book.titre ) {
       <li>
         <span class="title">
@@ -22,7 +22,7 @@
         <span class="langue">
           {{ book.langue }}
         </span>
-        <button (click)="removeBook($index)">Supprimer le livre</button>
+        <button (click)="removeBook($index)" class="btnDelete">Supprimer le livre</button>
       </li>
     }
   </ul>
