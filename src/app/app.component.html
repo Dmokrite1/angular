@@ -28,4 +28,21 @@
 </p>
 <app-truc (trucEmitter)="consoleTruc($event)"></app-truc>
 
-<app-machin></app-machin>
+<p>Nombre de clics sur le bouton favori : {{ favoriteClickCount }}</p>
+
+<app-favorite></app-favorite>
+
+<div>
+  <h3>Incrémente</h3>
+  <app-favorite favoriteText="increment" (favoriteClicked)="favoriteClickCount = favoriteClickCount +1"></app-favorite>
+</div>
+
+<div>
+  <h3>décrémente</h3>
+  <app-favorite favoriteText="decrement" (favoriteClicked)="favoriteClickCount = favoriteClickCount -1"></app-favorite>
+</div>
+
+<div>
+  <h3>reset</h3>
+  <app-favorite favoriteText="reset" (favoriteClicked)="favoriteClickCount = favoriteClickCount = 0"></app-favorite>
+</div>

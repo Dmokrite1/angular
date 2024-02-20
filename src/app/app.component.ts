@@ -4,11 +4,12 @@ import { SuperComponentsComponent } from './super-components/super-components.co
 import { ZippyComponent } from './zippy/zippy.component';
 import { BananaInABoxComponent } from './banana-in-abox/banana-in-abox.component';
 import { TrucComponent } from './truc/truc.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SuperComponentsComponent, ZippyComponent, BananaInABoxComponent, TrucComponent],
+  imports: [RouterOutlet, SuperComponentsComponent, ZippyComponent, BananaInABoxComponent, TrucComponent, FavoriteComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,4 +23,6 @@ export class AppComponent {
   consoleTruc(value: string) {
     console.log(`le mot entrée est : ${value}`)
   }
+
+  favoriteClickCount: number = 0;
 }
