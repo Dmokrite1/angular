@@ -1,0 +1,29 @@
+@for (movie of movies; track movie.title ) {
+    <div>
+        <p>
+            <span>
+                {{movie.title}}
+            </span>
+        </p>
+        <P>
+            <span>
+                {{movie.releaseYear}}
+            </span>
+        </P>
+        <P>
+            <span>
+                {{movie.genre}}
+            </span>
+        </P>
+    </div>
+}
+
+@for (otter of evilOtters; track otter) {
+    <p>
+        Totues les loutres sont diabloiques
+    </p>
+} @empty {
+    <p>
+        il n'y a pas de Loutres innocentes
+    </p>
+}
