@@ -1,29 +1,84 @@
 @for (movie of movies; track movie.title ) {
-    <div>
+    <div [class.odd]="$odd" 
+        [class.even]="$even" 
+        [class.firstElement]="$first"
+        [class.lastElement]="$last">
         <p>
-            <span>
-                {{movie.title}}
+            <span class="title">
+                {{ $index + 1 }}/{{ $count }} {{ movie.title }}
             </span>
+            <span class="release">
+                {{ movie.releaseYear }}
+            </span>
+
+            <span class="genre">
+                {{ movie.genre }}
+            </span> 
+        </p>           
+        <p>
+            1er élément: {{ $first }}
         </p>
-        <P>
-            <span>
-                {{movie.releaseYear}}
-            </span>
-        </P>
-        <P>
-            <span>
-                {{movie.genre}}
-            </span>
-        </P>
     </div>
 }
 
 @for (otter of evilOtters; track otter) {
     <p>
-        Totues les loutres sont diabloiques
+        Toutes les loutres sont diaboliques
     </p>
 } @empty {
     <p>
         il n'y a pas de Loutres innocentes
     </p>
 }
+
+@if (4 > 2) {
+    <p>
+        4 est plus grand que 2
+    </p>
+}
+
+@if (false) {
+    <p>
+      si c'est vrai je suis caché  
+    </p>
+} @else {
+    <p>
+        si c'est faux je ne suis pas caché
+    </p>
+}
+
+@if (false) {
+    <span>
+        je viens pas de paname mais de marly-gomont
+    </span>
+} @else if ("banane" === "banane") {
+    <p>
+        La banane est un fruit
+    </p>
+} @else {
+    <p>
+        truc
+    </p>
+}
+
+<button type="button" (click)="viewMode = 'kanban'">
+    Vue kanban
+</button>
+
+<button type="button" (click)="viewMode = 'list'">
+    Vue liste
+</button>
+
+@switch (viewMode) {
+    @case("kanban") {
+        <p>une vue avec des cartes</p>
+    }
+    @case('list') {
+        <p>une vue qui se lit de haut en bas</p>
+    }
+    @default {
+        <p>la vue par default</p>
+    }
+}
+
+<app-books></app-books>
