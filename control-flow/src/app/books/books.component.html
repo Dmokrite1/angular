@@ -1,29 +1,29 @@
-@for (book of books; track book.titre ) {
-    
-    <button (click)="displayRandomBook()">Affiche un livre random</button>
-    <p>{{ randomBooks }}</p>
+<button (click)="displayRandomBook()">Affiche un livre random</button>
+<p>{{ randomBooks }}</p>
 
-    <button (click)="displayList()">affiche la liste
-        <div [style.display]="listVisible ? 'block' : 'none'">
-            <p>
-                <span class="title">
-                    {{ $index + 1 }}/{{ $count }} {{ book.titre }}
-                </span>
-                <span class="author">
-                    {{ book.auteur }}
-                </span>
-                <span class="release">
-                    {{ book.annee_publication }}
-                </span>
-                <span class="genre">
-                    {{ book.genre }}
-                </span>
-                <span class="langue">
-                    {{ book.langue }}
-                </span>
-                <button (click)="removeBook($index)">Supprimer le livre</button>
-            </p>    
-        </div>
-    </button>
-}
+<button (click)="displayList()">Afficher la liste</button>
 
+<div [style.display]="listVisible ? 'block' : 'none'">
+  <ul>
+    @for (book of books; track book.titre ) {
+      <li>
+        <span class="title">
+          {{ $index + 1 }}/{{ $count }} {{ book.titre }}
+        </span>
+        <span class="author">
+          {{ book.auteur }}
+        </span>
+        <span class="release">
+          {{ book.annee_publication }}
+        </span>
+        <span class="genre">
+          {{ book.genre }}
+        </span>
+        <span class="langue">
+          {{ book.langue }}
+        </span>
+        <button (click)="removeBook($index)">Supprimer le livre</button>
+      </li>
+    }
+  </ul>
+</div>
