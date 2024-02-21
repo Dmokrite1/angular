@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HighlightDirective } from './highlight.directive';
 import { CoffeeDirectiveDirective } from './coffee-directive.directive';
 import { ColorDirectiveDirective } from './color-directive.directive';
+import { FreezePipe } from './freeze.pipe';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ColorDirectiveDirective } from './color-directive.directive';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, CommonModule, HighlightDirective, CoffeeDirectiveDirective, ColorDirectiveDirective]
+    imports: [RouterOutlet, CommonModule, HighlightDirective, CoffeeDirectiveDirective, ColorDirectiveDirective, FreezePipe]
 })
 export class AppComponent {
   title = 'directive';
