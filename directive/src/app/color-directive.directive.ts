@@ -12,7 +12,7 @@ export class ColorDirectiveDirective implements OnInit {
     this.el.nativeElement.style.color = this.color
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
   @HostListener('mouseenter') onMouseEnter() {

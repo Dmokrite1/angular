@@ -5,6 +5,7 @@ import { HighlightDirective } from './highlight.directive';
 import { CoffeeDirectiveDirective } from './coffee-directive.directive';
 import { ColorDirectiveDirective } from './color-directive.directive';
 import { FreezePipe } from './freeze.pipe';
+import { SummaryPipe } from './summary.pipe';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { FreezePipe } from './freeze.pipe';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, CommonModule, HighlightDirective, CoffeeDirectiveDirective, ColorDirectiveDirective, FreezePipe]
+    imports: [RouterOutlet, CommonModule, HighlightDirective, CoffeeDirectiveDirective, ColorDirectiveDirective, FreezePipe, SummaryPipe]
 })
 export class AppComponent {
   title = 'directive';
