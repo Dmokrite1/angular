@@ -1,13 +1,56 @@
 <p>reactive-forms works!</p>
 
-<h2 class="lol" style="color: gold; margin-right: 50px; border-radius: 5px; width: fit-content;">Reactive Forms</h2>   
+<h2 class="lol" style="color: gold; border-radius: 5px; width: fit-content; margin-right: 800px;">Reactive Forms</h2>   
 <form [formGroup]="signUpForm" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <div>
+    <div style="margin-bottom: 15px;">
         <label for="email">
-            Mail
+            Entrez votre email
         </label> 
         <!--Dans les réactives forms la property name est remplacé par formControlName, c'est comme ça qu'on fait le lien avec le name dans la property constructor-->
         <input type="text" formControlName="email" id="email">  
+    </div>
+    
+    @if (EmailControl.pending) {
+        <div style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
+            Loading...
+        </div>
+    }
+    
+    @if (EmailControl.invalid) {
+        <div class="errors" style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
+           
+            
+            @if (EmailControl.errors?.['forbiddenExtension']) {
+                Les emails avec l'extension {{ EmailControl.errors?.['forbiddenExtension'].actualExtension }}
+                ne sont pas autorisés à s'inscrire sur cette application.
+            }
+
+            @if (EmailControl.errors?.['uniqueEmail']) {
+                Adresse mail déjà utilisé (pas unique)
+            }
+        </div>
+    }
+    <div formGroupName="password">
+        <div style="margin-bottom: 15px;">
+            <label for="password">
+                Entrez votre mot de passe
+            </label> 
+            <!--Dans les réactives forms la property name est remplacé par formControlName, c'est comme ça qu'on fait le lien avec le name dans la property constructor-->
+            <!--Attention au nom comme PWD qui devra avoir le même nom partout (voir autres fichiers)-->
+            <input type="password" formControlName="pwd" id="password">  
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="confirm">
+                Confirmez votre mot de passe
+            </label> 
+            <!--Dans les réactives forms la property name est remplacé par formControlName, c'est comme ça qu'on fait le lien avec le name dans la property constructor-->
+            <input type="password" formControlName="confirm" id="confirm">  
+        </div>
+        @if (passwordControl.invalid) {
+            <div class="errors" style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
+                Mot de passe invalide, veuillez réessayez !
+            </div>
+        }
     </div>
     <button [disabled]="signUpForm.invalid" type="submit">Envoyez</button>
 </form>

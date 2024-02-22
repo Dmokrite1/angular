@@ -12,7 +12,9 @@ export function cannotBeForbiddenDomainValidator(control: AbstractControl): Vali
 
     if (emailExtension === "default") {
         return {
-            actualExtension: emailExtension,
+            forbiddenExtension: {
+               actualExtension: emailExtension, 
+            }
         }
     }
     return null;

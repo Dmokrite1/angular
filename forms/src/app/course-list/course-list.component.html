@@ -2,7 +2,7 @@
 
 <!-- création d'une variable de template form grâce à la syntaxe #form (créée dans template-form.ts) -->
 <form #form="ngForm" (ngSubmit)="submit(form)">
-    <h2 class="lol" style="display: flex; flex-direction: column; justify-content: center; align-items: center; color: gold; width: fit-content; margin-left: 200px; border-radius: 5px;">Création de cours</h2>
+    <h2 class="lol" style="display: flex; flex-direction: column; justify-content: center; align-items: center; color: gold; width: fit-content; margin-right: 800px; border-radius: 5px;">Création de cours</h2>
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <label for="cours" style="margin-bottom: 15px; background-color: silver; color: gold; border-radius: 4px;">Cours de Loutre</label>
         <!-- maxlength n'autorise pas d'écrire plus que le maximum-->
@@ -42,6 +42,6 @@
             }
         </div>
     }
-    <button id="btnForm" [disabled]="form.invalid" type="submit" style="color: gold; background: silver; border-radius: 5px; padding: 3px; align-items: center;">Envoyer</button>
+    <button id="btnForm" [disabled]="form.invalid" type="submit" style="color: gold; background: silver; border-radius: 5px; padding: 3px; align-items: center; margin-left: 340px;">Envoyer</button>
     </form>
 
