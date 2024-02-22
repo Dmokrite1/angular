@@ -20,7 +20,7 @@
 
 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <label for="email" style="margin-bottom: 15px; background-color: silver; color: gold; border-radius: 4px;">Mail</label>
-    <input pattern="[a-z0-9!#$%&’*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&’*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" #email="ngModel" ngModel type="text" name="email" id="email" style="width: 200px; margin-bottom: 15px; background: gold; border-radius: 5px;">
+    <input pattern="^[\w-.]+@([\w-]+.)+[\w-]{2,4}$" #email="ngModel" ngModel type="text" name="email" id="email" style="width: 200px; margin-bottom: 15px; background: gold; border-radius: 5px;">
 </div>
 @if(email.invalid) {
     <div class="errors">
