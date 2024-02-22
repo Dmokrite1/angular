@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+*
+
+
+body {
+    animation: 1.5s infinite alternate adieulesyeux;
+}
+
+
+
+@keyframes adieulesyeux {
+    0%{
+        background-color: antiquewhite;
+        transform: translateX(0);
+    }
+    10%{
+        background-color: rgb(187, 142, 83);
+        transform: translateX(100px);
+    }
+    20%{
+        background-color: rgb(70, 143, 37);
+        transform: translateX(200px);
+    }
+    30%{
+        background-color: rgb(25, 90, 50);
+        transform: translateX(300px);
+    }
+    40%{
+        background-color: rgb(57, 91, 185);
+        transform: translateX(400px);
+    }
+    50%{
+        background-color: antiquewhite;
+        transform: translateX(500px);
+    }
+    60%{
+        background-color: rgb(199, 133, 46);
+        transform: translateX(600px);
+    }
+    70%{
+        background-color: rgb(88, 235, 20);
+        transform: translateX(700px);
+    }
+    80%{
+        background-color: rgb(113, 228, 157);
+        transform: translateX(800px);
+    }
+    90%{
+        background-color: rgb(120, 144, 212);
+        transform: translateX(900px);
+    }
+}
+*/
