@@ -1,0 +1,47 @@
+<p>course-list works!</p>
+
+<!-- création d'une variable de template form grâce à la syntaxe #form (créée dans template-form.ts) -->
+<form #form="ngForm" (ngSubmit)="submit(form)">
+    <h2 class="lol" style="display: flex; flex-direction: column; justify-content: center; align-items: center; color: gold; width: fit-content; margin-left: 200px; border-radius: 5px;">Création de cours</h2>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <label for="cours" style="margin-bottom: 15px; background-color: silver; color: gold; border-radius: 4px;">Cours de Loutre</label>
+        <!-- maxlength n'autorise pas d'écrire plus que le maximum-->
+        <input required minlength="3" required maxlength="64" #cours="ngModel" ngModel type="text" rows="10" cols="30" name="cours" id="cours" style="width: 200px; height: 25px; margin-bottom: 15px; background: gold; border-radius: 5px;">
+    </div>
+    
+    @if (cours.touched && cours.invalid) {
+        <div class="errors" style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
+            @if (cours.errors?.['required']){
+                ceci est un champ obligatoire
+            }
+            @if (cours.errors?.['minlength']){
+                Il vous manque {{ cours.errors?.['minlength'].requiredLength - cours.errors?.['minlength'].actualLength }}
+                caractère pour atteindre la longueur minimum !
+            }
+        <!--
+            @if (cours.errors?.['maxlength']){
+                vous dépassez de {{ cours.errors?.['maxlength'].requiredLength - cours.errors?.['maxlength'].actualLength }}
+                caractère la longueur maximum !
+            }
+        -->
+        </div>
+    }
+    
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <label for="description" style="margin-bottom: 15px; background-color: silver; color: gold; border-radius: 5px;">description du cours</label>
+        <textarea #description="ngModel" ngModel name="comment" id="comment" cols="30" rows="10" style="width: 300px; margin-bottom: 15px; background: gold; border-radius: 8px;" required minlength="15"></textarea>
+    </div>
+    @if (description.touched && description.invalid) {
+        <div class="errors" style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
+            @if (description.errors?.['required']){
+                ceci est un champ obligatoire
+            }
+            @if (description.errors?.['minlength']){
+                Il vous manque {{ description.errors?.['minlength'].requiredLength - description.errors?.['minlength'].actualLength }}
+                caractère pour atteindre la longueur minimum !
+            }
+        </div>
+    }
+    <button id="btnForm" [disabled]="form.invalid" type="submit" style="color: gold; background: silver; border-radius: 5px; padding: 3px; align-items: center;">Envoyer</button>
+    </form>
+

@@ -1,1 +1,14 @@
 <p>reactive-forms works!</p>
+
+<h2 class="lol" style="color: gold; margin-right: 50px; border-radius: 5px; width: fit-content;">Reactive Forms</h2>   
+<form [formGroup]="signUpForm" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <div>
+        <label for="email">
+            Mail
+        </label> 
+        <!--Dans les réactives forms la property name est remplacé par formControlName, c'est comme ça qu'on fait le lien avec le name dans la property constructor-->
+        <input type="text" formControlName="email" id="email">  
+    </div>
+    <button [disabled]="signUpForm.invalid" type="submit">Envoyez</button>
+</form>
+

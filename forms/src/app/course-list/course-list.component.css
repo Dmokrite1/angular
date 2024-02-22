@@ -1,3 +1,11 @@
+#btnForm {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
 .lol{
     animation: 2s infinite alternate adieulesyeux;
 }

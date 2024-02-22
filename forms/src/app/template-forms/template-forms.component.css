@@ -1,0 +1,26 @@
+.lol{
+    animation: 2s infinite alternate adieulesyeux;
+}
+
+@keyframes adieulesyeux {
+    0%{
+        background-color: antiquewhite;
+        transform: translateX(0);
+    }
+    25%{
+        background-color: rgb(187, 142, 83);
+        transform: translateX(200px);
+    }
+    50%{
+        background-color: rgb(70, 143, 37);
+        transform: translateX(400px);
+    }
+    75%{
+        background-color: rgb(25, 90, 50);
+        transform: translateX(600px);
+    }
+    100%{
+        background-color: rgb(57, 91, 185);
+        transform: translateX(800px);
+    }
+}

@@ -1,4 +1,4 @@
-<h1 style="color: cadetblue;">template-forms works!</h1>
+<h2 class="lol" style="color: cadetblue; border-radius: 5px;">template-forms works!</h2>
 <!-- création d'une variable de template form grâce à la syntaxe #form (créée dans template-form.ts) -->
 <form #form="ngForm" (ngSubmit)="submit(form)">
 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -20,7 +20,7 @@
 
 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <label for="email" style="margin-bottom: 15px; background-color: silver; color: gold; border-radius: 4px;">Mail</label>
-    <input pattern="^[\w-.]+@([\w-]+.)+[\w-]{2,4}$" #email="ngModel" ngModel type="text" name="email" id="email" style="width: 200px; margin-bottom: 15px; background: gold; border-radius: 5px;">
+    <input pattern="^[\w\.]+@([\w]+\.)+[\w]{2,4}$" #email="ngModel" ngModel type="text" name="email" id="email" style="width: 200px; margin-bottom: 15px; background: gold; border-radius: 5px;">
 </div>
 @if(email.invalid) {
     <div class="errors">
