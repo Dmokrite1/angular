@@ -1,12 +1,6 @@
-/*
-*
-
-
-body {
-    animation: 1.5s infinite alternate adieulesyeux;
+.lol{
+    animation: 1.2s infinite alternate adieulesyeux;
 }
-
-
 
 @keyframes adieulesyeux {
     0%{
@@ -50,4 +44,3 @@ body {
         transform: translateX(900px);
     }
 }
-*/

@@ -53,44 +53,5 @@
         }
     </div>
     <button [disabled]="signUpForm.invalid" type="submit">Envoyez</button>
-</form>
 
-<h2 style="color: gold;">Rencontre des Loutres de ta région</h2>
-<form [formGroup]="signUpForm" (ngSubmit)="submit()">
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <label for="pseudo" style="margin-bottom: 15px; background-color: silver; color: gold; border-radius: 4px;">Pseudo</label>
-        <input required minlength="5" #pseudo="ngModel" ngModel type="text" name="pseudo" id="pseudo" style="width: 200px; margin-bottom: 15px; background: gold; border-radius: 5px;">
-    </div>
-    
-    @if (pseudo.touched && pseudo.invalid) {
-        <div class="errors" style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
-            @if (pseudo.errors?.['required']){
-                ceci est un champ obligatoire
-            }
-            @if (pseudo.errors?.['minlength']){
-                Il vous manque {{ pseudo.errors?.['minlength'].requiredLength - pseudo.errors?.['minlength'].actualLength }}
-                caractère pour atteindre la longueur minimum !
-            }
-        </div>
-    }
-
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <label for="pwd" style="margin-bottom: 15px; background-color: silver; color: gold; border-radius: 4px;">Password</label>
-        <input required minlength="5" #pwd="ngModel" ngModel type="text" name="pwd" id="pwd" style="width: 200px; margin-bottom: 15px; background: gold; border-radius: 5px;">
-    </div>
-
-    @if (pwd.touched && pwd.invalid) {
-        <div class="errors" style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
-            @if (pwd.errors?.['required']){
-                ceci est un champ obligatoire
-            }
-                    @if (passwordControl.invalid) {
-            <div class="errors" style="text-align: center; margin-bottom: 15px; color: gold; background: silver; border-radius: 4px; padding: 4px;">
-                Mot de passe invalide, veuillez réessayez !
-            </div>
-        }
-        </div>
-    }
-    <button [disabled]="signUpForm.invalid" type="submit">Envoyez</button>
-</form>
-
+<app-signup-form/>
