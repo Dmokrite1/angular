@@ -1,0 +1,51 @@
+<h2>A lot of books!</h2>
+
+<ul>
+    @for (book of books; track book.id) {
+        <li> 
+            <p>{{book.title}}</p>
+            <p>{{book.author}}</p>
+            <p>{{book.publication_year}}</p>
+            <p>{{book.genre}}</p>
+            <p>{{book.main_characters}}</p>
+            <p>{{book.summary}}</p>
+            <div>
+                <button type="button" (click)="markAsRead(book)">
+                    Marquer le livre comme lu
+                </button>
+                <button type="button" (click)="deleteBook(book)">
+                    le livre a était supprimé
+                </button>
+                <button type="button" (click)="createBook(book)">
+                    le livre a était selectionné
+                </button>
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>A lot of books!</h2>
+
+<ul>
+    @for (book of books; track book.id) {
+  <li>
+    <p>{{book.title}}</p>
+    <p>{{book.author}}</p>
+    <p>{{book.publication_year}}</p>
+    <p>{{book.genre}}</p>
+    <p>{{book.main_characters}}</p>
+    <p>{{book.summary}}</p>
+    <div>
+      <button type="button" (click)="markAsRead(book)">
+        Marquer le livre comme lu
+      </button>
+      <button type="button" (click)="deleteBook(book)">
+        le livre a été supprimé
+      </button>
+      <button type="button" (click)="selectBook(book)">
+        le livre a été sélectionné
+      </button>
+    </div>
+  </li>
+}
+</ul>

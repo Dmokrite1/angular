@@ -2,11 +2,15 @@
   "books": [
     {
       "id": "1",
-      "title": "Alice in Wonderland",
+      "title": "Alice in wonderland",
       "author": "Lewis Carroll",
       "publication_year": 1865,
       "genre": "Fantasy",
-      "main_characters": ["Alice", "The Mad Hatter", "Cheshire Cat"],
+      "main_characters": [
+        "Alice",
+        "The Mad Hatter",
+        "Cheshire Cat"
+      ],
       "summary": "Alice in Wonderland is a fantasy novel written by Lewis Carroll. The story follows the adventures of Alice, a young girl who falls down a rabbit hole and finds herself in a strange and wonderful world. She encounters eccentric characters such as the Mad Hatter and the Cheshire Cat, and must navigate through absurd trials to find her way. The book has become a classic of children's literature and has captivated readers of all ages since its publication.",
       "is_read": false
     },
@@ -39,18 +43,32 @@
       "is_read": false
     },
     {
-      "id": "4",
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "publication_year": 1813,
-      "genre": "Romance",
+      "id": "5",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "publication_year": 1925,
+      "genre": "Classic Fiction",
       "main_characters": [
-        "Elizabeth Bennet",
-        "Mr. Darcy",
-        "Jane Bennet"
+        "Jay Gatsby",
+        "Daisy Buchanan",
+        "Nick Carraway"
       ],
-      "summary": "Pride and Prejudice is a romance novel by Jane Austen. The story follows the lively Elizabeth Bennet as she navigates the societal expectations of 19th-century England. The novel explores themes of love, class, and personal growth, and is celebrated for its wit and social commentary.",
+      "summary": "The Great Gatsby is a classic fiction novel by F. Scott Fitzgerald. Set in the Roaring Twenties, the story is narrated by Nick Carraway, who becomes entangled in the lives of the mysterious Jay Gatsby and the beautiful but elusive Daisy Buchanan. The novel explores themes of wealth, love, and the American Dream.",
       "is_read": false
+    },
+    {
+      "id": "6",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "publication_year": 1937,
+      "genre": "Fantasy",
+      "main_characters": [
+        "Bilbo Baggins",
+        "Gandalf",
+        "Thorin Oakenshield"
+      ],
+      "summary": "The Hobbit is a fantasy novel by J.R.R. Tolkien. It follows the journey of Bilbo Baggins, a hobbit who is reluctantly thrust into an epic quest to reclaim a treasure guarded by the fearsome dragon Smaug. Along the way, Bilbo encounters elves, dwarves, and goblins, and discovers courage and resourcefulness within himself.",
+      "is_read": true
     },
     {
       "id": "5",

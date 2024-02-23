@@ -13,6 +13,8 @@ import { Book, BooksService } from '../books.service';
 })
 export class BooksComponent implements OnInit {
   books: Book[] = [];
+  selectedBook: [Book];
+  signUpForm: any;
 
   // on injecte la dépendance httpClient et on la rend disponible dans notre classe
   constructor(private httpService: HttpClient, private bookService: BooksService) {}
@@ -43,4 +45,13 @@ export class BooksComponent implements OnInit {
       this.loadBooks();
     })
   }
+
+  selectBook(book: Book) {
+    if (this.selectedBook === book) {
+      this.selectedBook = [];
+    } else {
+      this.selectedBook = book;
+    }
+  }
+  
 }
