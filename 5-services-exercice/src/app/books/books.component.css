@@ -1,0 +1,38 @@
+p {
+    color: rgb(37, 29, 87);
+    font-size: 22px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    color: white;
+}
+
+button {
+    background-color: rgb(115, 175, 213);
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+main {
+    background-image:url(../../assets/CornelisDusart.jpg);
+    background-size: cover;
+}
+
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+}
