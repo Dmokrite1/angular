@@ -1,0 +1,6 @@
+<label for="search">Rechercher un livre</label>
+<input #searchInput type="text" name="search" autocomplete="off" id="search" (keyup)="loadBooks(searchInput.value)">
+<!-- on utiliser $event pour passer la valeur émise par l'évènement deleteBook -->
+<app-book-list [books]="books" (selectBook)="select($event)" (deleteBook)="deleteBook($event)"/>
+Selected: {{ this.selected.title }}
+<app-book-form [book]="selected" (submitBook)="submit()" />

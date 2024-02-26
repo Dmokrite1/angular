@@ -59,7 +59,7 @@ export class BooksComponent implements OnInit {
       }
     });
     // Incrémenter le plus grand ID pour obtenir le prochain ID disponible
-    return (maxId + 1).toString(); // Convertir le nouvel ID en chaîne de caractères
+    return (maxId + 1).toString();
   }
 
   loadBooks() {
@@ -86,7 +86,6 @@ export class BooksComponent implements OnInit {
       this.loadBooks();
     })
   }
-
   
   resetForm() {
     this.addBookForm.reset();

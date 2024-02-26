@@ -36,5 +36,4 @@ export class BooksService {
   delete(id: string) {
     return this.httpService.delete(`${this.baseUrl}${id}`);
   } 
-
 }
