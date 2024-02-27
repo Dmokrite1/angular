@@ -1,0 +1,26 @@
+<p>counter works!</p>
+
+<div>
+    <span>
+        Compteur
+    </span>
+    <span>
+        {{ signalCounterAsReadonly() }}
+    </span>
+    <button (click)="signalIncrement()">
+        +
+    </button>
+    <button (click)="signalDecrement()">
+        -
+    </button>
+    <div>
+        <span>
+            Valeur du compteur x 10 :
+        </span>
+        <span>
+            {{ tenTimesSignalCounter() }}
+        </span>
+    </div>
+</div>
+
+
