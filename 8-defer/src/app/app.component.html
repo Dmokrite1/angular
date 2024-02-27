@@ -1,0 +1,59 @@
+<!-- Cette directive marque le contenu suivant comme une vue différée. Le déclencheur on interaction spécifie que le contenu différé ne doit être chargé qu'après une interaction de l'utilisateur, comme un clic, un défilement ou une pression sur une touche. -->
+@defer(on interaction) {
+  <app-too-long-to-load/>
+} @placeholder {
+  <div>
+    PlaceHolder
+  </div>
+} @loading {
+  <div>
+    Loading...
+  </div>
+}
+
+<!-- Cette directive marque le contenu suivant comme une vue différée. Le déclencheur on timer(3s) spécifie que le composant différé ne doit être chargé qu'après un délai de 3 secondes. -->
+@defer(on timer(3s)) {
+  <app-too-long-to-load/>
+} @placeholder {
+  <div>
+    PlaceHolder
+  </div>
+} @loading {
+  <div>
+    Loading...
+  </div>
+}
+
+<!-- Cette directive marque le contenu suivant comme une vue différée. Le déclencheur on idle spécifie que le contenu différé ne doit être chargé que lorsque le navigateur est dans un état d'inactivité (pas occupé par d'autres tâches). -->
+@defer(on idle) {
+  <app-too-long-to-load/>
+} @placeholder {
+  <div>
+    PlaceHolder
+  </div>
+} @loading {
+  <div>
+    Loading...
+  </div>
+}
+
+<!-- Cette directive marque le contenu suivant comme une vue différée. Le déclencheur when deferred spécifie que le contenu différé ne doit être chargé que lorsqu'il est explicitement demandé par le composant parent ou l'application. -->
+@defer(when deffered) {
+  <app-too-long-to-load/>
+} @placeholder {
+  <div>
+    PlaceHolder
+  </div>
+} @loading {
+  <div>
+    Loading...
+  </div>
+} @error {
+  <div>
+    Erreur
+  </div>
+}
+
+<button (click)="deffered = !deffered">
+display too long to loading
+</button>

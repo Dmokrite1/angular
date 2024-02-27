@@ -1,0 +1,28 @@
+<section>
+    <h3>
+        convertir l'age
+    </h3>
+    <div>
+        <label for="birthdate"> votre date de naissance</label>
+        <input #birthdate type="date" name="birthdate" id="birthdate" (change)="setBirthdate(birthdate.value)">
+    </div>
+    @if(isNewValue) {
+    <p>
+        <span>
+            votre âge :
+        </span>
+        <span>
+            {{ age() }} ans
+        </span>
+    </p>
+    <p>
+        <span>
+            votre âge en chien :
+        </span>
+        <span>
+            {{ dogAge() }} ans
+        </span>
+    </p>
+}
+</section>
+<router-outlet/>
