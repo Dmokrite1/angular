@@ -1,0 +1,68 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Projet A",
+      "deadline": "2024-03-15",
+      "description": "Projet A description",
+      "status": "En cours"
+    },
+    {
+      "id": "2",
+      "title": "Projet B",
+      "deadline": "2024-04-01",
+      "description": "Projet B description",
+      "status": "En attente"
+    }
+  ],
+  "todos": [
+    {
+      "id": "1",
+      "projectId": 1,
+      "title": "Tâche 1",
+      "description": "Tâche 1 description",
+      "deadline": "2024-03-05",
+      "status": "À faire"
+    },
+    {
+      "id": "2",
+      "projectId": 1,
+      "title": "Tâche 2",
+      "description": "Tâche 2 description",
+      "deadline": "2024-03-10",
+      "status": "En cours"
+    },
+    {
+      "id": "3",
+      "projectId": 1,
+      "title": "Tâche 3",
+      "description": "Tâche 3 description",
+      "deadline": "2024-03-15",
+      "status": "Terminée"
+    },
+    {
+      "id": "4",
+      "projectId": 2,
+      "title": "Tâche 4",
+      "description": "Tâche 4 description",
+      "deadline": "2024-03-20",
+      "status": "À faire"
+    },
+    {
+      "id": "5",
+      "projectId": 2,
+      "title": "Tâche 5",
+      "description": "Tâche 5 description",
+      "deadline": "2024-03-25",
+      "status": "En attente"
+    },
+    {
+      "id": "6",
+      "projectId": 2,
+      "title": "Tâche 6",
+      "description": "Tâche 6 description",
+      "deadline": "2024-04-01",
+      "status": "En cours"
+    }
+  ]
+}

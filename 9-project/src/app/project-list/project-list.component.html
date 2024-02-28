@@ -1,0 +1,70 @@
+<p>project-list works!</p>
+
+<main>
+
+    <section>
+        <h2 class="lol" style="color: rgb(37, 29, 87); margin-left: 40px; text-decoration: underline;">Liste de projets</h2>
+
+        <button type="button" (click)="isModalOpen = !isModalOpen" style="margin-top: 20px; margin-left: 35px;">
+            {{ !isModalOpen ? 'Ouvrir le formulaire' : 'Fermer le formulaire' }}
+        </button>
+
+        <ul>
+            @for (project of projects; track project.id) {
+                <li>
+                    <div>
+                        <p>
+                            {{project.title}}, {{project.deadline}}, {{project.description}} 
+                        </p>
+                        <p>
+                            {{project.status}} 
+                        </p>
+                    </div>
+                    <div>
+                        <button type="button" (click)="deleteProject(project)">
+                            Supprimer le projet
+                        </button>
+                        <div>
+                            <button type="button" (click)="onProjectClick(project)">{{ !isModalOpen ? 'Envoyer au formulaire' : 'Fermer le formulaire' }}</button>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </section>
+    <section>
+        <div id="myModal" class="modal" [style.display]="isModalOpen ? 'block' : 'none'" style="border-radius: 10px;">
+            <div class="modal-content" style="border-radius: 10px;">
+                <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()" style="text-align: center; margin: auto; background-color: rgb(134, 218, 214); padding: 20px; border-radius: 10px; border: 10px solid rgb(115, 175, 213);">
+                    <h2 class="lol" style="color: rgb(255, 255, 255); margin-bottom: 20px; text-decoration: underline;">{{ !isAdded ? 'Ajouter un projet' : 'Modifier le projet' }}</h2>
+                    <label for="title">Titre:&nbsp;</label>
+                    <input type="text" id="title" formControlName="title" required style="background-color: rgb(255, 255, 255); border-radius: 4px; color: rgb(115, 175, 213);"/>
+
+                    <br>
+
+                    <label for="deadline">DeadLine:&nbsp;</label>
+                    <input type="text" id="deadline" formControlName="deadline" required style="background-color: rgb(255, 255, 255); border-radius: 4px; color: rgb(115, 175, 213);"/>
+
+                    <br>
+
+                    <label for="description">Description:&nbsp;</label>
+                    <input type="text" id="description" formControlName="description" required style="background-color: rgb(255, 255, 255); border-radius: 4px; color: rgb(115, 175, 213);"/>
+
+                    <br>
+
+                    <label for="status">Status:&nbsp;</label>
+                    <input type="text" id="status" formControlName="status" required style="background-color: rgb(255, 255, 255); border-radius: 4px; color: rgb(115, 175, 213);"/>
+
+                    <input type="hidden" formControlName="id" />
+        
+                    <button type="submit" style="margin-top: 20px;">{{ !isAdded ? 'Ajouter' : 'Modifier' }}</button>            
+                    <button type="button" (click)="isModalOpen = !isModalOpen" style="margin-top: 20px;">
+                        {{ !isModalOpen ? 'Ouvrir le formulaire' : 'Fermer le formulaire' }}
+                    </button>
+                </form>    
+            </div>
+        </div>                
+    </section>
+</main>
+
+<router-outlet />
