@@ -17,8 +17,4 @@ export const routes: Routes = [{
 }, {
     path: 'stats',
     component: StatsComponent
-}, {
-    path: 'project',
-    redirectTo: ':projectId/to-dos',
-    pathMatch: "full"
 }];
