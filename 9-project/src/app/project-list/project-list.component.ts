@@ -90,7 +90,7 @@ onProjectClick(project: Project) {
   this.addProjectForm.patchValue(project);
   this.addProjectForm.get("id")!.setValue(project.id);
   this.isModalOpen = !this.isModalOpen
-  this.router.navigate(['/project', project.id, 'todos']);
+  this.router.navigate(['/project', project.id, 'to-dos']);
 }
 
 addProjectForm: FormGroup = new FormGroup({
