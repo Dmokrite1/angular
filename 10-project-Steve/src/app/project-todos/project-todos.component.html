@@ -1,0 +1,69 @@
+<nav class="navbar">
+  <ul>
+    <li>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+    </li>
+    <li>
+      <a routerLink="/todos" routerLinkActive="active">Todos</a>
+    </li>
+  </ul>
+</nav>
+<h1>Tous les Todos du projet {{projectId}} :</h1>
+
+@for (todo of todos; track todo.id){
+<ul>
+  <li>
+    <label class="status">{{todo.status}} | </label>
+    <label>{{ todo.title }}</label>
+  </li>
+</ul>
+} @if (todos.length < 1){
+<p>Aucun Todo trouvé.</p>
+}
+
+<button (click)="openCreateTodoModal()">Créer un nouveau ToDo</button>
+<div id="createTodoModal" class="modal modal-hidden">
+  <div class="modal-content">
+    <div>Formulaire pour création de Todo ici</div>
+    <form #todoForm="ngForm" (ngSubmit)="onSubmit(todoForm)">
+      <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" ngModel />
+      </div>
+
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" ngModel></textarea>
+      </div>
+
+      <div>
+        <label for="status">Status</label>
+        <select id="status" name="status" ngModel>
+          <option value="En cours">En cours</option>
+          <option value="En attente">En attente</option>
+          <option value="Terminée">Terminée</option>
+          <option value="A faire">A faire</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="deadline">Deadline</label>
+        <input type="date" id="deadline" name="deadline" ngModel />
+      </div>
+
+      <div>
+        <label for="projectId">ProjectId</label>
+        <input
+          type="text"
+          id="{{projectId}}"
+          name="ProjectId"
+          value="{{projectId}}"
+          ngModel
+        />
+      </div>
+
+      <button type="submit">Create Todo</button>
+    </form>
+    <button (click)="closeCreateTodoModal()">Close</button>
+  </div>
+</div>

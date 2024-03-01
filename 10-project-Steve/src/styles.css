@@ -1,0 +1,224 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar a.active {
+  background-color: #555;
+  color: white;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: royalblue;
+  justify-content: center;
+}
+.navbar ul li a {
+  padding: 25px;
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+}
+.navbar ul li a:hover {
+  background-color: #555;
+  color: white;
+}
+.projects-links button.create-project {
+  position: relative;
+  margin: 0 auto;
+  padding: 25px;
+  text-transform: uppercase;
+  background-color: forestgreen;
+  font-weight: bold;
+  font-size: 18px;
+}
+.projects-links button.create-project:hover {
+  background-color: green;
+}
+.create-project-div {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.projects-links {
+  background-color: #fff;
+  padding: 10px;
+  margin: 0;
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+}
+.projects-links li {
+  max-width: 25%;
+  width: 23.5%;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+  vertical-align: middle;
+  border: 1px solid white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.projects-links li:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+.projects-links a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  height: fit-content;
+}
+
+.projects-links button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+.projects-links button:hover {
+  background-color: darkred;
+}
+.projects-links span {
+  display: block;
+}
+.projects-links span.title {
+  font-weight: bold;
+  margin: 10px 0;
+  text-transform: uppercase;
+  color: #333;
+}
+.projects-links span.desc {
+  margin: 10px 0;
+  height: 75px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  position: relative;
+}
+.projects-links span.desc span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+.projects-links span.status {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.projects-links span.deadline {
+  margin-top: 5px;
+  line-height: 20px;
+  font-size: 18px;
+  color: black;
+}
+.projects-links span.deadline .urgent {
+  background-color: crimson;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: auto;
+  margin: 5px auto 0 auto;
+  display: inline-block;
+}
+.projects-links span.in-time {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: auto;
+  margin: 5px auto 0 auto;
+  display: inline-block;
+}
+.tets {
+  background-color: rgba(237, 178, 100, 0.562);
+}
+.select-projects {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  background-color: #555;
+  position: relative;
+}
+.select-projects span {
+  display: inline-block;
+  margin-right: 0px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.select-projects select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  width: 200px;
+  margin: 10px 15px;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.select-projects select option {
+  background-color: #ddd;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+}
+.select-projects .tri-status {
+  color: white;
+}
+.color-projects-details {
+  padding: 10px;
+}
+.color-projects-details span.blue-block {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #ace7ff;
+  padding: 13px 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.color-projects-details span.green-block {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #bffcc6;
+  padding: 13px 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.color-projects-details span.yellow-block {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #ffffd1;
+  padding: 13px 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}

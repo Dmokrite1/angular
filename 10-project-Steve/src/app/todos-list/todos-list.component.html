@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <ul>
+    <li>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+    </li>
+    <li>
+      <a routerLink="/todos" routerLinkActive="active">Todos</a>
+    </li>
+  </ul>
+</nav>
+<div class="todos-list">
+  <h2>Liste des Todos</h2>
+
+  @for (todo of todos; track todo.id){
+  <div
+    class="todo-item"
+    [ngClass]="{ 'todo-terminated': todo.status === 'Terminée' }"
+  >
+    <h3>{{todo.title}}</h3>
+    <p>{{todo.description}}</p>
+
+    <span>
+      {{ todo.status }}
+    </span>
+
+    <span>{{todo.status}}</span>
+  </div>
+  } @if (todos.length === 0){
+  <p class="empty-list">Aucun todo trouvé</p>
+  }
+</div>

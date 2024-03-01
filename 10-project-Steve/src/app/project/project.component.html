@@ -1,0 +1,95 @@
+<nav class="navbar">
+  <ul>
+    <li>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+    </li>
+    <li>
+      <a routerLink="/todos" routerLinkActive="active">Todos</a>
+    </li>
+  </ul>
+</nav>
+<div class="select-projects">
+  <div class="color-projects-details">
+    <span class="blue-block">En cours</span>
+
+    <span class="green-block">Terminé</span>
+    <span class="yellow-block">En attente</span>
+  </div>
+  <div>
+    <span class="tri-status">Trier par status </span>
+    <select (change)="onSelectionChange($event)">
+      <option value="Tous">Tous les projets</option>
+      <option value="En cours">En cours</option>
+      <option value="Terminé">Terminé</option>
+      <option value="En attente">En attente</option>
+    </select>
+  </div>
+</div>
+<ul class="projects-links">
+  @for (project of sortedProjects; track project.id; ) {
+  <li [ngStyle]="{'background-color': getStatusColor(project.status)}">
+    <a [routerLink]="['/projects', project.id, 'todos']">
+      <span class="title">{{ project.title }}</span>
+      <span class="desc"><span>{{project.description}}</span></span>
+
+      <span class="deadline">
+        @if (isPastDeadline(project.deadline) && project.status !== 'Terminé') {
+        <span class="urgent">
+          <i class="fa-solid fa-circle-exclamation"></i> En retard
+          ({{project.deadline | date:'d/MM/yyyy'}})
+        </span>
+        } @if (!isPastDeadline(project.deadline)) {
+        <span class="in-time">
+          <span>
+            <i class="fa-solid fa-circle-check"></i>
+            J-{{getRemainingDays(project.deadline)}} ({{project.deadline |
+            date:'d/MM/yyyy'}})
+          </span>
+        </span>
+        }
+      </span>
+    </a>
+    <button (click)="deleteProject(project.id!)">
+      X
+    </button>
+  </li>
+  }
+  <div class="create-project-div"></div>
+  <button class="create-project" (click)="openCreateProjectModal()">
+    Créer un nouveau projet
+  </button>
+</ul>
+
+<div id="createProjectModal" class="modal modal-hidden">
+  <div class="modal-content">
+    <div>Formulaire pour création projet ici</div>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+      <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" ngModel />
+      </div>
+
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" ngModel></textarea>
+      </div>
+
+      <div>
+        <label for="status">Status</label>
+        <select id="status" name="status" ngModel>
+          <option value="En cours">En cours</option>
+          <option value="En attente">En attente</option>
+          <option value="Terminé">Terminé</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="deadline">Deadline</label>
+        <input type="date" id="deadline" name="deadline" ngModel />
+      </div>
+
+      <button type="submit">Create Project</button>
+    </form>
+    <button (click)="closeCreateProjectModal()">Close</button>
+  </div>
+</div>
